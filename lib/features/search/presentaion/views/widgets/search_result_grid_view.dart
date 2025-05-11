@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mypro/features/home/presentation/views/widgets/custom_grid_view_item.dart';
+import 'package:mypro/features/home/presentation/views/widgets/custom_grid_view_loading.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -7,10 +8,11 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      shrinkWrap: true,
+      padding:const EdgeInsets.only(top: 5),
+      physics:const BouncingScrollPhysics(),
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const CustomGridViewItem();
+        return const CustomGridViewLoading();
       },
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

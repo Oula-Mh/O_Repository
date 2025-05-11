@@ -28,10 +28,6 @@ class BodySearch extends StatelessWidget {
                  SizedBox(
                   height: 20,
                 ),
-                Text("نتيجة البحث",style: TextStyle(fontSize: 18),),
-                SizedBox(
-                  height: 10,
-                ),
                 Expanded(
                     child: SearchResultListView())
               ],

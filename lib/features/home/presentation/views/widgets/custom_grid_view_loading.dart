@@ -13,6 +13,7 @@ class CustomGridViewLoading extends StatelessWidget {
       shadowColor: Colors.grey.shade50,
       borderRadius: BorderRadius.circular(12),
       child: Shimmer.fromColors(
+        period:const Duration(milliseconds: 599),
         highlightColor: Colors.white,
         baseColor: Colors.grey.shade300,
         child: Padding(

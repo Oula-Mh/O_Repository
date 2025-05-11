@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:mypro/core/utils/app_color.dart';
+import 'package:mypro/core/utils/app_router.dart';
 import 'features/login/presentaion/views/login_view.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
         locale: const Locale('ar'), // إجبار التطبيق يشتغل بالعربي
         supportedLocales: const [
           Locale('ar', ''), // اللغة العربية
@@ -27,6 +28,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData()
             .copyWith(scaffoldBackgroundColor: AppColor.backGroundColor),
         debugShowCheckedModeBanner: false,
-        home: const LoginView());
+        routerConfig: AppRoute.router);
   }
 }

@@ -1,20 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mypro/core/utils/app_color.dart';
 import 'package:mypro/core/utils/app_text_style.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../alnaal/presentaion/views/AlnaalView.dart';
+import '../../../data/models/shoes_models_model.dart';
+import '../../manger/shoes_models/shoes_models_cubit.dart';
 
 class CustomGridViewItem extends StatelessWidget {
-  const CustomGridViewItem({super.key});
-
+   const CustomGridViewItem({required this.shoesModelsModel,super.key});
+final ShoesModelsModel shoesModelsModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          Get.to(const AlnaalView(),
-              transition: Transition.circularReveal,
-              duration: const Duration(milliseconds: 700  ));
+          // Get.to(const AlnaalView(),
+          //     transition: Transition.circularReveal,
+          //     duration: const Duration(milliseconds: 700  ));
+          GoRouter.of(context).push(AppRoute.alnaal,extra:shoesModelsModel );
+
         },
         child: Material(
           color: AppColor.customCardColor,
@@ -69,7 +75,7 @@ class CustomGridViewItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      '124',
+                      shoesModelsModel.modelNumber,
                       style: MyTextStyle.base,
                     ),
                   ],

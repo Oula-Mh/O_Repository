@@ -15,7 +15,7 @@ class CustomGridViewRecordItem extends StatelessWidget {
           shadowColor: Colors.grey.shade50,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(46),
+                  bottomLeft: Radius.circular(40),
                   topRight: Radius.circular(10),
                   topLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)

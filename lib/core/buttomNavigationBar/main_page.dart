@@ -1,7 +1,13 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mypro/core/buttomNavigationBar/custom_navigation_bar.dart';
+import 'package:mypro/core/utils/api_service.dart';
+import 'package:mypro/features/home/data/repos/home_repo_impl.dart';
+import 'package:mypro/features/home/presentation/manger/shoes_models/shoes_models_cubit.dart';
 import 'package:mypro/features/home/presentation/views/home_view.dart';
 import 'package:mypro/features/record/presentation/views/record_view.dart';
+import '';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -13,7 +19,18 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const HomeView(),
+
+    BlocProvider(
+      create: (context) => ShoesModelsCubit(
+        HomeRepoImpl(
+          ApiService(
+            Dio(),
+          ),
+        ),
+      )..fetchAllShoesModels(),
+      child: const HomeView(),
+    ),
+
     const RecordView(),
     // AccountView(),
     // ExitView()

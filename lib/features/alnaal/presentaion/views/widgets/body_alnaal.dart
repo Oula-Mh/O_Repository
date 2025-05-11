@@ -3,16 +3,19 @@ import 'package:mypro/core/share_widgets/custom_icon_button.dart';
 import 'package:mypro/core/utils/app_color.dart';
 import 'package:mypro/core/utils/app_text_style.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mypro/features/home/data/models/shoes_models_model.dart';
+import 'alnaal_list_view_builder.dart';
 import 'custom_grid_view_alnaal_item.dart';
+import 'number_model_and_image.dart';
 
 class BodyAlnaal extends StatelessWidget {
-  const BodyAlnaal({super.key});
-
+   BodyAlnaal({required this.shoesModelsModel,super.key});
+ShoesModelsModel shoesModelsModel;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const NumberModelAndImage(),
+         NumberModelAndImage(shoesModelsModel: shoesModelsModel,),
         const SizedBox(
           height: 10,
         ),
@@ -42,12 +45,11 @@ class BodyAlnaal extends StatelessWidget {
                           ],
                         ),
                       )),
+                  const SizedBox(height: 20),
                   Flexible(
                       flex: 10,
                       child:
-                      ListView.builder(
-                          itemCount: 10,
-                          itemBuilder: (context,index){return CustomGridViewAlnaalItem();})
+                      AlnaalListViewBuilder()
                   )
                 ],
               ),
@@ -58,53 +60,3 @@ class BodyAlnaal extends StatelessWidget {
   }
 }
 
-class NumberModelAndImage extends StatelessWidget {
-  const NumberModelAndImage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return
-    Card(
-      elevation: 2,
-      color: AppColor.bodyCardColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child:
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "رقم الموديل : ",
-                  style: MyTextStyle.subTitle,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  '124',
-                  style: MyTextStyle.base,
-                )
-              ],
-            ),
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("assets/images/aa.jpeg"),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    )
-      ;
-  }
-}

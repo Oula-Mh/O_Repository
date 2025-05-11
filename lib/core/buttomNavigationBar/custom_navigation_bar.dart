@@ -13,11 +13,11 @@ class CustomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:  BoxDecoration(
-        color: AppColor.bodyCardColor,
+        color: AppColor.backGroundIconColor,
         border:const Border(top: BorderSide(width: 0.2)),
       ),
       child: SnakeNavigationBar.color(
-        backgroundColor: AppColor.bodyCardColor,
+        backgroundColor: AppColor.backGroundIconColor,
         behaviour: SnakeBarBehaviour.floating,
         snakeShape: SnakeShape.circle,
         padding: const EdgeInsets.symmetric(vertical: 3),

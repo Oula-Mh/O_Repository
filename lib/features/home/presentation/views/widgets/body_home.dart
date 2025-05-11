@@ -48,11 +48,8 @@ class BodyHome extends StatelessWidget {
                   ),
                 ],
               ),
-              // const SizedBox(height: 8,),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .7,
-                child: const HomeGridViewBuilder(),
-              ),
+               const SizedBox(height: 20,),
+            const  HomeGridViewBuilder()
             ],
           ),
         ));

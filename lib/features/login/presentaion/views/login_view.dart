@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mypro/core/utils/app_color.dart';
+import 'package:mypro/core/utils/app_router.dart';
 import 'package:mypro/features/login/presentaion/views/widgets/custom_button_auth.dart';
 import 'package:mypro/features/login/presentaion/views/widgets/text_form_field_auth.dart';
 import 'package:mypro/features/login/presentaion/views/widgets/top_bar.dart';
@@ -51,8 +53,10 @@ class LoginView extends StatelessWidget {
                   const SizedBox(height: 40),
                   CustomButtomAuth(
                     onPressed: () {
-                      Get.to(const MainPage(),
-                          transition: Transition.rightToLeft);
+                      // Get.to(const MainPage(),
+                      //     transition: Transition.rightToLeft);
+                      GoRouter.of(context).push(AppRoute.main);
+
                     },
                     textButtom: 'تسجيل الدخول',
                   )

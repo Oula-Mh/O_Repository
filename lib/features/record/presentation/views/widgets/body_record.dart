@@ -27,10 +27,12 @@ class BodyRecord extends StatelessWidget {
               height: 15,
             ),
            const ChoseBetween(),
+const SizedBox(height: 20),
             SizedBox(
               height: MediaQuery.of(context).size.height * .6,
-
               child: ListView.builder(
+                padding:const EdgeInsets.only(top: 5),
+                physics:const BouncingScrollPhysics(),
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return const CustomGridViewRecordItem();

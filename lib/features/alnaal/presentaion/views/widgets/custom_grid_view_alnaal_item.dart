@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mypro/core/utils/app_color.dart';
+import 'package:mypro/features/alnaal/data/models/alnaal_model.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class CustomGridViewAlnaalItem extends StatelessWidget {
-  const CustomGridViewAlnaalItem({super.key});
+   CustomGridViewAlnaalItem({required this.alnaalModel,super.key});
+  final AlnaalModel alnaalModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,7 +56,7 @@ class CustomGridViewAlnaalItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      '124',
+                      alnaalModel.alnaalNumber,
                       style: MyTextStyle.base,
                     )
                   ],

@@ -14,5 +14,5 @@ abstract class MyTextStyle {
 
   //base
   static TextStyle base = const TextStyle(
-      fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xff6E6D6D));
+      fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xff6E6D6D));
 }

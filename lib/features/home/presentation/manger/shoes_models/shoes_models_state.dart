@@ -14,9 +14,13 @@ class ShoesModelsLoading extends ShoesModelsState {}
 class ShoesModelsFailure extends ShoesModelsState {
   final String errMessage;
   const ShoesModelsFailure(this.errMessage);
+  @override
+  List<Object> get props => [errMessage];
 }
 
-class ShoesModelSsuccess extends ShoesModelsState {
+class ShoesModelSuccess extends ShoesModelsState {
   final List<ShoesModelsModel> shoesModels;
-  const ShoesModelSsuccess(this.shoesModels);
+  const ShoesModelSuccess(this.shoesModels);
+  @override
+  List<Object> get props => [shoesModels];
 }
